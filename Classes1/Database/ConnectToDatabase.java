@@ -92,11 +92,11 @@ public class ConnectToDatabase {
 					System.out.println(ex);
 				}
 			}
-			public  static void writeDataAnimal(String Name, String Gender, String Type, String Breed)
+			public  static void writeDataAnimal(String Breed, String Gender, String Name, String Type)
 			{
 				try{
 					
-					PreparedStatement ps = (PreparedStatement) con.prepareStatement("INSERT INTO dbuseraccount.animal(Name,Gender, Type, Breed)VALUES ( '" + Name + "','" + Gender + "','" + Type + "','" + Breed + "')");
+					PreparedStatement ps = (PreparedStatement) con.prepareStatement("INSERT INTO  dbuseraccount.animal(Breed,Gender, Name, Type)VALUES ( '" + Breed + "','" + Gender + "','" + Name + "','" + Type + "')");
 
 					ps.executeUpdate();
 					ps.close();
@@ -108,9 +108,11 @@ public class ConnectToDatabase {
 				
 				catch(Exception e)
 				{
-					System.out.println(e);
+					System.out.println(e+"here!");
 				}
 			}
+			
+		
 				public  static void writeDataAppointment( String Date, String CustID, String AniID, String PetType, String Injury)
 				{
 					try{
